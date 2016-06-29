@@ -1,10 +1,12 @@
 package com.eltech.graph.engine;
 
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.*;
 
 import com.eltech.graph.gui.*;
+import com.eltech.graph.struct.*;
 
 public class Main extends JFrame {
 	
@@ -34,6 +36,8 @@ public class Main extends JFrame {
 	 * GUIManager utilize all gui routine 
 	 */
 	private GUIManager gui;
+	private Graph graph;
+	private MouseHandler mouseHandler;
 	
 	
 	/**
@@ -49,6 +53,10 @@ public class Main extends JFrame {
 		setupWindow();
 		
 		gui = new GUIManager(this);
+		graph = new Graph();
+		
+		mouseHandler = new MouseHandler(this);
+		
 		
 	}
 	
@@ -75,6 +83,16 @@ public class Main extends JFrame {
 			this.setVisible(true);
 			
 		}
+	}
+	
+	// setters and getters
+	
+	public GUIManager getGUI() {
+		return gui;
+	}
+	
+	public Graph getGraph() {
+		return graph;
 	}
 	
 	public static void main(String[] args) {

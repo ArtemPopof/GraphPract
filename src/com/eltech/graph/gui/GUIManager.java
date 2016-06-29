@@ -18,5 +18,10 @@ public class GUIManager {
 		this.main = main;
 		
 	}
+	
+	
+	public Graphics getDrawGraphics() {
+		return mainPanel.getGraphics();
+	}
 
 }
