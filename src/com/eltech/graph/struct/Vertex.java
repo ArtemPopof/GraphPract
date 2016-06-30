@@ -2,6 +2,7 @@ package com.eltech.graph.struct;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Point;
 
 /**
  * Graph vertex realization.
@@ -13,10 +14,10 @@ import java.awt.Dimension;
 
 public class Vertex {
 	
-	private static final Color DEFAULT_COLOR = Color.red;
+	private static final int DEFAULT_COLOR = 0;
 	
 	private int x, y; // coords.
-	private Color color;
+	private int color;
 	
 	/**
 	 * Constructor with all settings
@@ -25,7 +26,7 @@ public class Vertex {
 	 * @param y
 	 * @param color
 	 */
-	public Vertex (int x, int y, Color color) {
+	public Vertex (int x, int y, int color) {
 		
 		this.x = x;
 		this.y = y;
@@ -60,7 +61,7 @@ public class Vertex {
 	 * 
 	 * @param newColor
 	 */
-	public void setColor(Color newColor) {
+	public void setColor(int newColor) {
 		this.color = newColor;
 	}
 	
@@ -69,9 +70,14 @@ public class Vertex {
 	 * 
 	 * @return
 	 */
-	public Dimension getPosition() {
-		return new Dimension(x, y);
-	}	
+	public Point getPosition() {
+		return new Point(x, y);
+	}
 	
+	public int getColor() {
+		return color;
+	}
+	
+
 
 }

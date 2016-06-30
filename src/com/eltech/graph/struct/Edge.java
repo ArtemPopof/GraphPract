@@ -16,7 +16,7 @@ public class Edge {
 	private int secondVertexIndex;
 	private int weight;
 	
-	private Color color;
+	private int color;
 	
 	private Edge next; 		
 	
@@ -33,17 +33,38 @@ public class Edge {
 		firstVertexIndex = u;
 		secondVertexIndex = v;
 		this.weight = weight;
-		color = Color.black;
+		color = 0;
 		next = null;
 		
 	}
 		
-	public void setColor(Color newColor) {
+	public void setColor(int newColor) {
 		this.color = newColor;
 	}
 	
 	public Edge getNextEdge() {
 		return next;
 	}
+	
+	public int getFirstVertex() {
+		return firstVertexIndex;
+	}
+	
+	public int getSecondVertex() {
+		return secondVertexIndex;
+	}
+	
+	public void setNextEdge(Edge newNext) {
+		this.next = newNext;
+	}
+
+	public int getColor() {
+		return color;
+	}
+	
+	public int getWeight() {
+		return weight;
+	}
+	
 
 }

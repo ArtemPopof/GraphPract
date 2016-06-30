@@ -1,6 +1,7 @@
 package com.eltech.graph.engine;
 
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.*;
@@ -24,8 +25,8 @@ public class Main extends JFrame {
 	/**
 	 * Screen size for windowed mode
 	 */
-	public static final int WINDOW_WIDTH = SCREEN_WIDTH * 60/100;
-	public static final int WINDOW_HEIGHT = SCREEN_HEIGHT * 60/100;
+	public static final int WINDOW_WIDTH = 1100;
+	public static final int WINDOW_HEIGHT = 950;
 	
 	//
 	
@@ -80,6 +81,7 @@ public class Main extends JFrame {
 			this.setSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
 			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			this.setResizable(false);
+			this.setLayout(new BorderLayout());
 			this.setVisible(true);
 			
 		}
@@ -93,6 +95,10 @@ public class Main extends JFrame {
 	
 	public Graph getGraph() {
 		return graph;
+	}
+	
+	public MouseHandler getMouseHandler() {
+		return mouseHandler;
 	}
 	
 	public static void main(String[] args) {

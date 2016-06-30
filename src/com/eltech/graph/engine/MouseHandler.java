@@ -4,6 +4,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
+import javax.swing.JOptionPane;
+
 import com.eltech.graph.gui.*;
 
 /**
@@ -28,10 +30,19 @@ public class MouseHandler implements MouseListener, MouseMotionListener{
 		
 		GUIManager gui = main.getGUI();
 		
-		main.getGraph().update(gui.getDrawGraphics());
+		main.getGraph().paintGraph(gui.getDrawGraphics());
 		
 	}
 	public void mouseClicked(MouseEvent arg0) {
+		
+		main.getGUI().mouseClicked(arg0);
+		
+		GUIManager gui = main.getGUI();
+		
+		gui.getDrawGraphics().dispose();
+		
+		main.getGraph().paintGraph(gui.getDrawGraphics());
+		
 	}
 	public void mouseEntered(MouseEvent arg0) {
 	}
