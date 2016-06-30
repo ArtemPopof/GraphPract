@@ -1,5 +1,7 @@
 package com.eltech.graph.gui;
 
+import java.awt.Graphics;
+
 import com.eltech.graph.engine.*;
 
 /**
